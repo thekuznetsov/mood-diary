@@ -41,9 +41,6 @@ form.addEventListener("submit", function (event) {
 
   entries.push(entry);
 
-  console.log("Добавлена запись:", entry);
-  console.log("Все записи:", entries);
-
   renderEntries();
 
   saveEntries();
