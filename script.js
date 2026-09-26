@@ -32,4 +32,22 @@ form.addEventListener("submit", function (event) {
 
   console.log("Добавлена запись:", entry);
   console.log("Все записи:", entries);
+
+  renderEntries();
 });
+
+function renderEntries() {
+  entriesList.innerHTML = "";
+
+  entries.forEach(function (entry) {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <span>${entry.mood}</span>
+      <span>${entry.date.toLocaleString()}</span>
+      <p>${entry.note}</span>
+    `;
+
+    entriesList.appendChild(li);
+  });
+}
