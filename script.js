@@ -33,6 +33,7 @@ form.addEventListener("submit", function (event) {
   }
 
   const entry = {
+    id: Date.now(),
     mood: selectedMood,
     note: noteInput.value,
     date: new Date().toISOString(),
@@ -66,6 +67,7 @@ function renderEntries() {
       <span>${entry.mood}</span>
       <span>${new Date(entry.date).toLocaleString()}</span>
       <p>${entry.note}</p>
+      <button class='delete-btn' data-id='${entry.id}'>✕</button>
     `;
 
     entriesList.appendChild(li);
@@ -82,6 +84,19 @@ function loadEntries() {
     entries = JSON.parse(saved);
   }
 }
+
+entriesList.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete-btn")) {
+    const id = Number(event.target.dataset.id);
+
+    entries = entries.filter(function (entry) {
+      return entry.id !== id;
+    });
+
+    saveEntries();
+    renderEntries();
+  }
+});
 
 loadEntries();
 renderEntries();
