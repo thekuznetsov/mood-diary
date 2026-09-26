@@ -34,6 +34,14 @@ form.addEventListener("submit", function (event) {
   console.log("Все записи:", entries);
 
   renderEntries();
+
+  noteInput.value = "";
+  selectedMood = null;
+
+  const buttons = moodPicker.querySelectorAll("button");
+  buttons.forEach(function (btn) {
+    btn.classList.remove("selected");
+  });
 });
 
 function renderEntries() {
