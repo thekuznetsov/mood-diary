@@ -25,7 +25,7 @@ form.addEventListener("submit", function (event) {
   const entry = {
     mood: selectedMood,
     note: noteInput.value,
-    date: new Date(),
+    date: new Date().toISOString(),
   };
 
   entries.push(entry);
@@ -34,6 +34,8 @@ form.addEventListener("submit", function (event) {
   console.log("Все записи:", entries);
 
   renderEntries();
+
+  saveEntries();
 
   noteInput.value = "";
   selectedMood = null;
@@ -52,10 +54,24 @@ function renderEntries() {
 
     li.innerHTML = `
       <span>${entry.mood}</span>
-      <span>${entry.date.toLocaleString()}</span>
-      <p>${entry.note}</span>
+      <span>${new Date(entry.date).toLocaleString()}</span>
+      <p>${entry.note}</p>
     `;
 
     entriesList.appendChild(li);
   });
 }
+
+function saveEntries() {
+  localStorage.setItem("entries", JSON.stringify(entries));
+}
+
+function loadEntries() {
+  const saved = localStorage.getItem("entries");
+  if (saved) {
+    entries = JSON.parse(saved);
+  }
+}
+
+loadEntries();
+renderEntries();
