@@ -7,6 +7,13 @@ let selectedMood = null;
 
 moodPicker.addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
+    const buttons = moodPicker.querySelectorAll("button");
+    buttons.forEach(function (btn) {
+      btn.classList.remove("selected");
+    });
+
+    event.target.classList.add("selected");
+
     selectedMood = event.target.dataset.mood;
     console.log("Выбрано настроение:", selectedMood);
   }
