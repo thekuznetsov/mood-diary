@@ -15,6 +15,12 @@ moodPicker.addEventListener("click", function (event) {
     event.target.classList.add("selected");
 
     selectedMood = event.target.dataset.mood;
-    console.log("Выбрано настроение:", selectedMood);
   }
+});
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log("Форма отправлена!");
+  console.log("Настроение:", selectedMood);
+  console.log("Заметка:", noteInput.value);
 });
