@@ -22,6 +22,16 @@ moodPicker.addEventListener("click", function (event) {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  if (!selectedMood) {
+    alert("Выбери настроение!");
+    return;
+  }
+
+  if (noteInput.value.trim() === "") {
+    alert("Напиши заметку!");
+    return;
+  }
+
   const entry = {
     mood: selectedMood,
     note: noteInput.value,
