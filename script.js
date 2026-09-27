@@ -23,12 +23,12 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (!selectedMood) {
-    alert("Выбери настроение!");
+    showToast("Выбери настроение!");
     return;
   }
 
   if (noteInput.value.trim() === "") {
-    alert("Напиши заметку!");
+    showToast("Напиши заметку!");
     return;
   }
 
@@ -76,6 +76,16 @@ function renderEntries() {
 
     entriesList.appendChild(li);
   });
+}
+
+function showToast(message) {
+  const toast = document.querySelector("#toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(function () {
+    toast.classList.remove("show");
+  }, 2000);
 }
 
 function saveEntries() {
