@@ -123,3 +123,31 @@ form {
   background: #ff4444;
   color: white;
 }
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  #mood-picker {
+    gap: 6px;
+  }
+
+  #mood-picker button {
+    font-size: 20px;
+    padding: 6px 10px;
+  }
+
+  #entries-list li {
+    padding: 12px;
+  }
+}
