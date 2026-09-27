@@ -57,6 +57,13 @@ form.addEventListener("submit", function (event) {
 function renderEntries() {
   entriesList.innerHTML = "";
 
+  const emptyMessage = document.querySelector("#empty-message");
+  if (entries.length === 0) {
+    emptyMessage.style.display = "block";
+  } else {
+    emptyMessage.style.display = "none";
+  }
+
   entries.forEach(function (entry) {
     const li = document.createElement("li");
 
