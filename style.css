@@ -28,3 +28,29 @@ form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 24px;
 }
+
+#mood-picker {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#mood-picker button {
+  font-size: 24px;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#mood-picker button:hover {
+  transform: scale(1.1);
+}
+
+#mood-picker button.selected {
+  border-color: #4a90e2;
+  background: eaf2fd;
+  transform: scale(1.1);
+}
