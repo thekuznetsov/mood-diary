@@ -36,6 +36,7 @@ form {
 }
 
 #mood-picker button {
+  flex: 1;
   font-size: 24px;
   padding: 8px 12px;
   background: white;
@@ -102,6 +103,16 @@ form {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: relative;
+}
+
+#entries-list li span:last-of-type {
+  color: #999;
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+#entries-list li p {
+  margin-top: 8px;
 }
 
 .delete-btn {
