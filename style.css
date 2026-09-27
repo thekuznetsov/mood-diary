@@ -71,3 +71,20 @@ form {
   outline: none;
   border-color: #4a90e2;
 }
+
+#mood-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#mood-form button[type="submit"]:hover {
+  background: #3a7bc8;
+}
